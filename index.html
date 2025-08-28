@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision Talk Invitation</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- WOW.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script> new WOW().init(); </script>
+
+  <style>
+    body {
+      background: linear-gradient(120deg, #1a1c2c, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<section class="h-screen flex flex-col justify-center items-center text-center">
+    <img src="remove-logo.png" alt="Vision Talk Logo" class="mb-6 wow fadeInDown" style="width: 20%;">
+    <h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 wow fadeInUp">
+      Vision Talk 2025
+    </h1>
+    <p class="mt-6 text-lg md:text-2xl text-gray-300 wow fadeInUp" data-wow-delay="0.3s">
+      Empowering Minds | Inspiring Stories
+    </p>
+    <p class="mt-2 text-sm text-gray-400 wow fadeInUp" data-wow-delay="0.6s">
+      20th October 2025 | Via Online
+    </p>
+    <a href="#about" class="mt-8 px-6 py-3 bg-indigo-600 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-500 wow zoomIn" data-wow-delay="0.9s">
+      Discover More
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 md:px-20 text-center bg-black/30 backdrop-blur-lg">
+    <h2 class="text-4xl font-bold mb-6 wow fadeInDown">About Vision Talk</h2>
+    <p class="max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed wow fadeInUp">
+      Vision Talk is a platform where dreamers, achievers, and innovators share their incredible journeys. 
+      Join us to discover inspiring stories and ignite the spark within yourself to create a better future. 
+    </p>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-20 px-6 md:px-20 bg-gradient-to-br from-indigo-900 to-purple-900">
+    <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Success Stories</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInLeft">
+        <h3 class="text-xl font-semibold mb-3">Story 1</h3>
+        <p class="text-gray-300">A student who turned their vision into a startup that now helps thousands worldwide.</p>
+      </div>
+      <div class="p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInUp">
+        <h3 class="text-xl font-semibold mb-3">Story 2</h3>
+        <p class="text-gray-300">An inspiring tale of overcoming challenges and breaking barriers in tech and innovation.</p>
+      </div>
+      <div class="p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInRight">
+        <h3 class="text-xl font-semibold mb-3">Story 3</h3>
+        <p class="text-gray-300">A visionary leader who turned passion into a movement for positive change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Details -->
+  <!-- Online Event Details Section -->
+<section class="py-20 px-6 md:px-20 text-center bg-black/30 backdrop-blur-lg">
+  <h2 class="text-4xl font-bold mb-6 wow fadeInDown">Event Details</h2>
+  
+  <p class="text-gray-300 text-lg mb-4 wow fadeInUp">🌐 Online Event — Join us from anywhere in the world</p>
+  
+  <!-- Event Backdrop -->
+  <div class="wow fadeInUp mb-8" data-wow-delay="0.3s">
+    <img src="ss.jpeg" alt="Vision Talk Event Backdrop" class="mx-auto rounded-2xl shadow-xl max-w-3xl">
+  </div>
+  
+  <!-- Invitation Message -->
+  <p class="text-xl text-gray-200 font-medium mb-6 wow fadeInUp" data-wow-delay="0.5s">
+    We are excited to invite you to <span class="text-indigo-400 font-bold">Vision Talk 2025</span>.<br>
+    Join inspiring leaders and achievers as they share their journey of success!
+  </p>
+  
+  <!-- Meeting Link Section -->
+  <div class="flex flex-col items-center gap-4">
+    <a href="https://meet.google.com/xyz-1234" target="_blank" 
+       class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-full text-lg font-semibold shadow-lg wow zoomIn" data-wow-delay="0.7s">
+      Join Meeting
+    </a>
+    
+    <button onclick="copyLink()" 
+      class="px-4 py-2 border border-indigo-400 text-indigo-300 rounded-lg text-sm hover:bg-indigo-600 hover:text-white transition wow fadeInUp" data-wow-delay="0.9s">
+      📋 Copy Meeting Link
+    </button>
+  </div>
+  
+  <p id="copyMsg" class="text-green-400 text-sm mt-3 hidden">✅ Meeting link copied!</p>
+</section>
+
+
+
+  <!-- QR Section -->
+  <section class="py-20 px-6 md:px-20 text-center bg-gradient-to-r from-pink-600 via-purple-700 to-indigo-700">
+    <h2 class="text-4xl font-bold mb-6 wow fadeInDown">Scan to Register</h2>
+    <img src="images.png" alt="QR Code" class="mx-auto w-40 h-40 rounded-lg shadow-xl wow zoomIn" data-wow-delay="0.4s">
+    <p class="mt-6 text-gray-200 wow fadeInUp" data-wow-delay="0.6s">Join the movement. Be part of Vision Talk 2025.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-black text-center text-gray-400">
+    <p>© 2025 Vision Talk. All Rights Reserved.</p>
+    <p class="mt-2">Follow us on 
+      <a href="#" class="text-indigo-400 hover:text-indigo-300">Facebook</a>, 
+      <a href="#" class="text-pink-400 hover:text-pink-300">Instagram</a>, 
+      <a href="#" class="text-blue-400 hover:text-blue-300">Twitter</a>
+    </p>
+  </footer>
+
+
+
+  
+<script>
+  function copyLink() {
+    navigator.clipboard.writeText("https://meet.google.com/xyz-1234");
+    document.getElementById("copyMsg").classList.remove("hidden");
+    setTimeout(() => document.getElementById("copyMsg").classList.add("hidden"), 3000);
+  }
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
