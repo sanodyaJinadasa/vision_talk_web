@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,12 +36,28 @@
       padding: 2rem;
       box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     }
+    .story-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .story-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .team-card {
+      transition: transform 0.3s ease;
+    }
+    .team-card:hover {
+      transform: scale(1.05);
+    }
+    .h-screen{
+          height: 90vh !important;
+    }
   </style>
 </head>
 <body>
 
 <section class="h-screen flex flex-col justify-center items-center text-center">
-    <!-- <img src="logo.jpeg" alt="Vision Talk Logo" class="mb-6 wow fadeInDown" style="width: 20%;"> -->
+    <img src="logo-crop.jpeg" alt="Vision Talk Logo" class="mb-6 wow fadeInDown" style="width: 10%;border-radius: 15px;">
     <h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 wow fadeInUp">
       Vision Talk 2025
     </h1>
@@ -70,62 +85,183 @@
   <section class="py-20 px-6 md:px-20 bg-gradient-to-br from-indigo-900 to-purple-900">
     <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Success Stories</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInLeft">
-        <h3 class="text-xl font-semibold mb-3">Story 1</h3>
-        <p class="text-gray-300">A student who turned their vision into a startup that now helps thousands worldwide.</p>
+      
+      <!-- Story 1 -->
+      <div class="story-card p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInLeft">
+        <div class="mb-4">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+               alt="Alex Thompson" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Alex Thompson</h3>
+        <p class="text-gray-300 mb-4 italic">"The biggest risk is not taking any risk at all. My startup failed twice before I found success."</p>
+        <p class="text-gray-400 text-sm mb-4">A student who turned their vision into a startup that now helps thousands worldwide.</p>
+        <button onclick="toggleStory('story1')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-sm transition">
+          Read More
+        </button>
+        <div id="story1" class="hidden mt-4 text-gray-300 text-sm">
+          <p>Alex started coding at 14 and launched his first app at 16. After two failed startups, he created EduTech Solutions, which now serves over 50,000 students globally. His journey proves that persistence and vision can overcome any obstacle.</p>
+        </div>
       </div>
-      <div class="p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInUp">
-        <h3 class="text-xl font-semibold mb-3">Story 2</h3>
-        <p class="text-gray-300">An inspiring tale of overcoming challenges and breaking barriers in tech and innovation.</p>
+
+      <!-- Story 2 -->
+      <div class="story-card p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInUp">
+        <div class="mb-4">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face" 
+               alt="Sarah Chen" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Sarah Chen</h3>
+        <p class="text-gray-300 mb-4 italic">"Breaking barriers isn't just about gender—it's about breaking the barriers in your own mind first."</p>
+        <p class="text-gray-400 text-sm mb-4">An inspiring tale of overcoming challenges and breaking barriers in tech and innovation.</p>
+        <button onclick="toggleStory('story2')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-sm transition">
+          Read More
+        </button>
+        <div id="story2" class="hidden mt-4 text-gray-300 text-sm">
+          <p>Sarah became the youngest female CTO at a Fortune 500 company at age 28. She leads a team of 200+ engineers and has 15 patents in AI and machine learning. Her advocacy for women in tech has inspired thousands to pursue STEM careers.</p>
+        </div>
       </div>
-      <div class="p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInRight">
-        <h3 class="text-xl font-semibold mb-3">Story 3</h3>
-        <p class="text-gray-300">A visionary leader who turned passion into a movement for positive change.</p>
+
+      <!-- Story 3 -->
+      <div class="story-card p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInRight">
+        <div class="mb-4">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" 
+               alt="Marcus Rodriguez" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Marcus Rodriguez</h3>
+        <p class="text-gray-300 mb-4 italic">"Passion without purpose is just noise. Find your purpose, and let it fuel your passion."</p>
+        <p class="text-gray-400 text-sm mb-4">A visionary leader who turned passion into a movement for positive change.</p>
+        <button onclick="toggleStory('story3')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-sm transition">
+          Read More
+        </button>
+        <div id="story3" class="hidden mt-4 text-gray-300 text-sm">
+          <p>Marcus founded GreenFuture Initiative, an environmental nonprofit that has planted over 1 million trees and educated 100,000+ students about climate change. His work has been recognized by the UN Environmental Programme.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Event Details -->
-  <!-- Online Event Details Section -->
-<section class="py-20 px-6 md:px-20 text-center bg-black/30 backdrop-blur-lg">
-  <h2 class="text-4xl font-bold mb-6 wow fadeInDown">Event Details</h2>
-  
-  <p class="text-gray-300 text-lg mb-4 wow fadeInUp">🌐 Online Event — Join us from anywhere in the world</p>
-  
-  <!-- Event Backdrop -->
-  <div class="wow fadeInUp mb-8" data-wow-delay="0.3s">
-    <img src="logo.jpeg" alt="Vision Talk Event Backdrop" class="mx-auto rounded-2xl shadow-xl max-w-3xl">
-  </div>
-  
-  <!-- Invitation Message -->
-  <p class="text-xl text-gray-200 font-medium mb-6 wow fadeInUp" data-wow-delay="0.5s">
-    We are excited to invite you to <span class="text-indigo-400 font-bold">Vision Talk 2025</span>.<br>
-    Join inspiring leaders and achievers as they share their journey of success!
-  </p>
-  
-  <!-- Meeting Link Section -->
-  <div class="flex flex-col items-center gap-4">
-    <a href="https://meet.google.com/xyz-1234" target="_blank" 
-       class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-full text-lg font-semibold shadow-lg wow zoomIn" data-wow-delay="0.7s">
-      Join Meeting
-    </a>
-    
-    <button onclick="copyLink()" 
-      class="px-4 py-2 border border-indigo-400 text-indigo-300 rounded-lg text-sm hover:bg-indigo-600 hover:text-white transition wow fadeInUp" data-wow-delay="0.9s">
-      📋 Copy Meeting Link
-    </button>
-  </div>
-  
-  <p id="copyMsg" class="text-green-400 text-sm mt-3 hidden">✅ Meeting link copied!</p>
-</section>
+  <!-- Vision Talks Family -->
+  <section class="py-20 px-6 md:px-20 bg-black/40 backdrop-blur-lg">
+    <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Vision Talks Family</h2>
+    <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Team Member 1 -->
+      <div class="team-card text-center wow fadeInUp">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" 
+             alt="Dr. Emily Watson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Dr. Emily Watson</h3>
+        <p class="text-indigo-400 font-medium mb-1">Event Director</p>
+        <p class="text-gray-300 text-sm mb-2">Stanford University</p>
+        <p class="text-gray-400 text-xs">Ph.D. in Innovation Management</p>
+      </div>
 
+      <!-- Team Member 2 -->
+      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.2s">
+        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face" 
+             alt="James Mitchell" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">James Mitchell</h3>
+        <p class="text-purple-400 font-medium mb-1">Technical Coordinator</p>
+        <p class="text-gray-300 text-sm mb-2">MIT</p>
+        <p class="text-gray-400 text-xs">M.S. Computer Science</p>
+      </div>
 
+      <!-- Team Member 3 -->
+      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.4s">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" 
+             alt="Lisa Park" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Lisa Park</h3>
+        <p class="text-pink-400 font-medium mb-1">Marketing Lead</p>
+        <p class="text-gray-300 text-sm mb-2">Harvard Business School</p>
+        <p class="text-gray-400 text-xs">MBA in Digital Marketing</p>
+      </div>
 
-  <!-- QR Section -->
-  <section class="py-20 px-6 md:px-20 text-center bg-gradient-to-r from-pink-600 via-purple-700 to-indigo-700">
-    <h2 class="text-4xl font-bold mb-6 wow fadeInDown">Scan to Register</h2>
-    <img src="images.jpg" alt="QR Code" class="mx-auto w-40 h-40 rounded-lg shadow-xl wow zoomIn" data-wow-delay="0.4s">
-    <p class="mt-6 text-gray-200 wow fadeInUp" data-wow-delay="0.6s">Join the movement. Be part of Vision Talk 2025.</p>
+      <!-- Team Member 4 -->
+      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.6s">
+        <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=200&h=200&fit=crop&crop=face" 
+             alt="David Kumar" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">David Kumar</h3>
+        <p class="text-green-400 font-medium mb-1">Content Strategist</p>
+        <p class="text-gray-300 text-sm mb-2">Oxford University</p>
+        <p class="text-gray-400 text-xs">M.A. in Communications</p>
+      </div>
+
+      <!-- Team Member 5 -->
+      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.8s">
+        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face" 
+             alt="Maria Gonzalez" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Maria Gonzalez</h3>
+        <p class="text-yellow-400 font-medium mb-1">Community Manager</p>
+        <p class="text-gray-300 text-sm mb-2">University of California</p>
+        <p class="text-gray-400 text-xs">B.A. in Social Sciences</p>
+      </div>
+
+      <!-- Team Member 6 -->
+      <div class="team-card text-center wow fadeInUp" data-wow-delay="1s">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" 
+             alt="Robert Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Robert Johnson</h3>
+        <p class="text-blue-400 font-medium mb-1">Operations Lead</p>
+        <p class="text-gray-300 text-sm mb-2">Cambridge University</p>
+        <p class="text-gray-400 text-xs">M.B.A. in Operations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 px-6 md:px-20 bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-800">
+    <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Get In Touch</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+      
+      <!-- Contact Info -->
+      <div class="wow fadeInLeft">
+        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center">
+              📧
+            </div>
+            <div>
+              <p class="font-medium">Email</p>
+              <p class="text-gray-300">info@visiontalk2025.com</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center">
+              📱
+            </div>
+            <div>
+              <p class="font-medium">Phone</p>
+              <p class="text-gray-300">+1 (555) 123-4567</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center">
+              🌐
+            </div>
+            <div>
+              <p class="font-medium">Website</p>
+              <p class="text-gray-300">www.visiontalk2025.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="wow fadeInRight">
+        <h3 class="text-2xl font-semibold mb-6">Send us a Message</h3>
+        <form class="space-y-4">
+          <input type="text" placeholder="Your Name" 
+                 class="w-full px-4 py-3 bg-white/10 rounded-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <input type="email" placeholder="Your Email" 
+                 class="w-full px-4 py-3 bg-white/10 rounded-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <textarea placeholder="Your Message" rows="4" 
+                    class="w-full px-4 py-3 bg-white/10 rounded-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          <button type="submit" 
+                  class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold hover:from-indigo-500 hover:to-purple-500 transition">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -138,25 +274,20 @@
     </p>
   </footer>
 
-
-
-  
 <script>
-  function copyLink() {
-    navigator.clipboard.writeText("https://meet.google.com/xyz-1234");
-    document.getElementById("copyMsg").classList.remove("hidden");
-    setTimeout(() => document.getElementById("copyMsg").classList.add("hidden"), 3000);
+  function toggleStory(storyId) {
+    const story = document.getElementById(storyId);
+    const button = story.previousElementSibling;
+    
+    if (story.classList.contains('hidden')) {
+      story.classList.remove('hidden');
+      button.textContent = 'Read Less';
+    } else {
+      story.classList.add('hidden');
+      button.textContent = 'Read More';
+    }
   }
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
-
-
