@@ -1,293 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vision Talk Invitation</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision Talk 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #0d0d0d;
+        color: #ddd;
+        font-family: "Poppins", sans-serif;
+      }
+      .nav-link {
+        transition: color 0.3s;
+      }
+      .nav-link:hover {
+        color: #d4af37;
+      }
+      .contact-card {
+        background: #1c1c1c;
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+      .contact-card:hover {
+        background: #252525;
+      }
+      .form-input {
+        background: #111;
+        border: 1px solid #333;
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        width: 100%;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: #d4af37;
+      }
+      .btn-primary {
+        background: #d4af37;
+        color: #000;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background: #c89e2d;
+      }
+      .wave-header {
+        background: url("1b47bac8-5ac1-477f-9780-35b2036e73ec.png") no-repeat
+          center/cover;
+        padding: 8rem 2rem 6rem;
+        text-align: center;
+      }
 
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      /* Pagination bullets */
+      .swiper-pagination-bullet {
+        background: #d4af37 !important; /* gold */
+        opacity: 0.6;
+      }
+      .swiper-pagination-bullet-active {
+        background: #ffcc00 !important; /* bright gold for active */
+        opacity: 1;
+      }
 
-  <!-- WOW.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-  <script> new WOW().init(); </script>
+      /* Navigation arrows */
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: #d4af37 !important; /* gold */
+        font-weight: bold;
+      }
 
-  <style>
-    body {
-      background: linear-gradient(120deg, #1a1c2c, #302b63, #24243e);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-    }
-    @keyframes gradientMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    }
-    .story-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .story-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    .team-card {
-      transition: transform 0.3s ease;
-    }
-    .team-card:hover {
-      transform: scale(1.05);
-    }
-    .h-screen{
-          height: 90vh !important;
-    }
-  </style>
-</head>
-<body>
+      .swiper-button-prev:hover,
+      .swiper-button-next:hover {
+        color: #ffcc00 !important; /* brighter gold on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="flex justify-between items-center px-6 md:px-20 py-4 bg-black/80 fixed w-full z-10"
+    >
+      <a href="#" class="flex items-center space-x-2">
+        <img
+          src="logo.jpeg"
+          alt="VisionTalk Logo"
+          class="w-10 h-10 object-contain"
+        />
+        <span class="text-2xl font-bold text-yellow-500">VisionTalk</span>
+      </a>
 
-<section class="h-screen flex flex-col justify-center items-center text-center">
-    <img src="logo-crop.jpeg" alt="Vision Talk Logo" class="mb-6 wow fadeInDown" style="width: 10%;border-radius: 15px;">
-    <h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 wow fadeInUp">
-      Vision Talk 2025
-    </h1>
-    <p class="mt-6 text-lg md:text-2xl text-gray-300 wow fadeInUp" data-wow-delay="0.3s">
-      Empowering Minds | Inspiring Stories
-    </p>
-    <p class="mt-2 text-sm text-gray-400 wow fadeInUp" data-wow-delay="0.6s">
-      20th October 2025 | Via Online
-    </p>
-    <a href="#about" class="mt-8 px-6 py-3 bg-indigo-600 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-500 wow zoomIn" data-wow-delay="0.9s">
-      Discover More
-    </a>
-  </section>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#stories" class="nav-link">Stories</a>
+        <a href="#family" class="nav-link">Family</a>
+        <a href="#sponsors" class="nav-link">Sponsors</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 px-6 md:px-20 text-center bg-black/30 backdrop-blur-lg">
-    <h2 class="text-4xl font-bold mb-6 wow fadeInDown">About Vision Talk</h2>
-    <p class="max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed wow fadeInUp">
-      Vision Talk is a platform where dreamers, achievers, and innovators share their incredible journeys. 
-      Join us to discover inspiring stories and ignite the spark within yourself to create a better future. 
-    </p>
-  </section>
+    <!-- Hero -->
+    <header class="wave-header">
+      <h1 class="text-5xl font-bold text-white">Vision Talk 2025</h1>
+      <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
+        Empowering Minds | Inspiring Stories | Connecting Futures
+      </p>
+      <img
+        src="pattern-removebg-preview.png"
+        alt="Scroll Down"
+        style="position: absolute; margin-top: 0"
+      />
+    </header>
 
-  <!-- Success Stories -->
-  <section class="py-20 px-6 md:px-20 bg-gradient-to-br from-indigo-900 to-purple-900">
-    <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Success Stories</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      
-      <!-- Story 1 -->
-      <div class="story-card p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInLeft">
-        <div class="mb-4">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
-               alt="Alex Thompson" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+    <!-- About -->
+    <section
+      id="about"
+      class="px-6 md:px-20 py-20 text-center"
+      style="background-color: #2a2828"
+    >
+      <h2 class="text-4xl font-bold text-yellow-500 mb-6">About Vision Talk</h2>
+      <p class="max-w-3xl mx-auto text-gray-400">
+        Vision Talk is a platform where dreamers, achievers, and innovators
+        share their journeys. Join us to discover inspiring stories and ignite
+        the spark within yourself to create a better future.
+      </p>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="stories" class="px-6 md:px-20 py-20 bg-[#111]">
+      <h2 class="text-4xl font-bold text-yellow-500 text-center mb-12">
+        Success Stories
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Story 1 -->
+        <div class="contact-card text-center">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
+            alt="Alex Thompson"
+            class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+          />
+          <h3 class="text-xl font-semibold text-white">Alex Thompson</h3>
+          <p class="text-gray-400 italic mt-2">
+            “My startup failed twice before I found success.”
+          </p>
+          <button onclick="toggleStory('story1')" class="mt-4 btn-primary">
+            Read More
+          </button>
+          <div id="story1" class="hidden mt-4 text-gray-300 text-sm">
+            <p>
+              Alex started coding at 14 and launched his first app at 16. After
+              two failed startups, he created EduTech Solutions, which now
+              serves over 50,000 students globally. His journey proves that
+              persistence and vision can overcome any obstacle.
+            </p>
+          </div>
         </div>
-        <h3 class="text-xl font-semibold mb-3">Alex Thompson</h3>
-        <p class="text-gray-300 mb-4 italic">"The biggest risk is not taking any risk at all. My startup failed twice before I found success."</p>
-        <p class="text-gray-400 text-sm mb-4">A student who turned their vision into a startup that now helps thousands worldwide.</p>
-        <button onclick="toggleStory('story1')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-sm transition">
-          Read More
-        </button>
-        <div id="story1" class="hidden mt-4 text-gray-300 text-sm">
-          <p>Alex started coding at 14 and launched his first app at 16. After two failed startups, he created EduTech Solutions, which now serves over 50,000 students globally. His journey proves that persistence and vision can overcome any obstacle.</p>
+
+        <!-- Story 2 -->
+        <div class="contact-card text-center">
+          <img
+            src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face"
+            alt="Sarah Chen"
+            class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+          />
+          <h3 class="text-xl font-semibold text-white">Sarah Chen</h3>
+          <p class="text-gray-400 italic mt-2">
+            “Breaking barriers starts in your own mind first.”
+          </p>
+          <button onclick="toggleStory('story2')" class="mt-4 btn-primary">
+            Read More
+          </button>
+          <div id="story2" class="hidden mt-4 text-gray-300 text-sm">
+            <p>
+              Sarah became the youngest female CTO at a Fortune 500 company at
+              age 28. She leads a team of 200+ engineers and has 15 patents in
+              AI and machine learning. Her advocacy for women in tech has
+              inspired thousands to pursue STEM careers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="contact-card text-center">
+          <img
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
+            alt="Marcus Rodriguez"
+            class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+          />
+          <h3 class="text-xl font-semibold text-white">Marcus Rodriguez</h3>
+          <p class="text-gray-400 italic mt-2">
+            “Find your purpose, let it fuel your passion.”
+          </p>
+          <button onclick="toggleStory('story3')" class="mt-4 btn-primary">
+            Read More
+          </button>
+          <div id="story3" class="hidden mt-4 text-gray-300 text-sm">
+            <p>
+              Marcus founded GreenFuture Initiative, an environmental nonprofit
+              that has planted over 1 million trees and educated 100,000+
+              students about climate change. His work has been recognized by the
+              UN Environmental Programme.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Story 2 -->
-      <div class="story-card p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInUp">
-        <div class="mb-4">
-          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face" 
-               alt="Sarah Chen" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-        </div>
-        <h3 class="text-xl font-semibold mb-3">Sarah Chen</h3>
-        <p class="text-gray-300 mb-4 italic">"Breaking barriers isn't just about gender—it's about breaking the barriers in your own mind first."</p>
-        <p class="text-gray-400 text-sm mb-4">An inspiring tale of overcoming challenges and breaking barriers in tech and innovation.</p>
-        <button onclick="toggleStory('story2')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-sm transition">
-          Read More
-        </button>
-        <div id="story2" class="hidden mt-4 text-gray-300 text-sm">
-          <p>Sarah became the youngest female CTO at a Fortune 500 company at age 28. She leads a team of 200+ engineers and has 15 patents in AI and machine learning. Her advocacy for women in tech has inspired thousands to pursue STEM careers.</p>
-        </div>
-      </div>
+    <!-- Vision Talk Family -->
+    <section
+      id="family"
+      class="px-6 md:px-20 py-20"
+      style="background-color: #2a2828"
+    >
+      <h2 class="text-4xl font-bold text-yellow-500 text-center mb-12">
+        Vision Talk Family
+      </h2>
 
-      <!-- Story 3 -->
-      <div class="story-card p-6 bg-white/10 rounded-2xl shadow-lg wow fadeInRight">
-        <div class="mb-4">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" 
-               alt="Marcus Rodriguez" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-        </div>
-        <h3 class="text-xl font-semibold mb-3">Marcus Rodriguez</h3>
-        <p class="text-gray-300 mb-4 italic">"Passion without purpose is just noise. Find your purpose, and let it fuel your passion."</p>
-        <p class="text-gray-400 text-sm mb-4">A visionary leader who turned passion into a movement for positive change.</p>
-        <button onclick="toggleStory('story3')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-sm transition">
-          Read More
-        </button>
-        <div id="story3" class="hidden mt-4 text-gray-300 text-sm">
-          <p>Marcus founded GreenFuture Initiative, an environmental nonprofit that has planted over 1 million trees and educated 100,000+ students about climate change. His work has been recognized by the UN Environmental Programme.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision Talks Family -->
-  <section class="py-20 px-6 md:px-20 bg-black/40 backdrop-blur-lg">
-    <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Vision Talks Family</h2>
-    <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      
-      <!-- Team Member 1 -->
-      <div class="team-card text-center wow fadeInUp">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" 
-             alt="Dr. Emily Watson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Dr. Emily Watson</h3>
-        <p class="text-indigo-400 font-medium mb-1">Event Director</p>
-        <p class="text-gray-300 text-sm mb-2">Stanford University</p>
-        <p class="text-gray-400 text-xs">Ph.D. in Innovation Management</p>
-      </div>
-
-      <!-- Team Member 2 -->
-      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.2s">
-        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face" 
-             alt="James Mitchell" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">James Mitchell</h3>
-        <p class="text-purple-400 font-medium mb-1">Technical Coordinator</p>
-        <p class="text-gray-300 text-sm mb-2">MIT</p>
-        <p class="text-gray-400 text-xs">M.S. Computer Science</p>
-      </div>
-
-      <!-- Team Member 3 -->
-      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.4s">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" 
-             alt="Lisa Park" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Lisa Park</h3>
-        <p class="text-pink-400 font-medium mb-1">Marketing Lead</p>
-        <p class="text-gray-300 text-sm mb-2">Harvard Business School</p>
-        <p class="text-gray-400 text-xs">MBA in Digital Marketing</p>
-      </div>
-
-      <!-- Team Member 4 -->
-      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.6s">
-        <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=200&h=200&fit=crop&crop=face" 
-             alt="David Kumar" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">David Kumar</h3>
-        <p class="text-green-400 font-medium mb-1">Content Strategist</p>
-        <p class="text-gray-300 text-sm mb-2">Oxford University</p>
-        <p class="text-gray-400 text-xs">M.A. in Communications</p>
-      </div>
-
-      <!-- Team Member 5 -->
-      <div class="team-card text-center wow fadeInUp" data-wow-delay="0.8s">
-        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face" 
-             alt="Maria Gonzalez" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Maria Gonzalez</h3>
-        <p class="text-yellow-400 font-medium mb-1">Community Manager</p>
-        <p class="text-gray-300 text-sm mb-2">University of California</p>
-        <p class="text-gray-400 text-xs">B.A. in Social Sciences</p>
-      </div>
-
-      <!-- Team Member 6 -->
-      <div class="team-card text-center wow fadeInUp" data-wow-delay="1s">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" 
-             alt="Robert Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Robert Johnson</h3>
-        <p class="text-blue-400 font-medium mb-1">Operations Lead</p>
-        <p class="text-gray-300 text-sm mb-2">Cambridge University</p>
-        <p class="text-gray-400 text-xs">M.B.A. in Operations</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-20 px-6 md:px-20 bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-800">
-    <h2 class="text-4xl font-bold text-center mb-12 wow fadeInDown">Get In Touch</h2>
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-      
-      <!-- Contact Info -->
-      <div class="wow fadeInLeft">
-        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
-        <div class="space-y-4">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center">
-              📧
+      <!-- Swiper Container -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="contact-card text-center">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face"
+                alt="Dr. Emily Watson"
+                class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-lg"
+              />
+              <h3 class="text-xl font-semibold text-white">Dr. Emily Watson</h3>
+              <p class="text-yellow-500 font-medium">Event Director</p>
+              <p class="text-gray-400 text-sm">Stanford University</p>
             </div>
-            <div>
-              <p class="font-medium">Email</p>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="contact-card text-center">
+              <img
+                src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face"
+                alt="James Mitchell"
+                class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-lg"
+              />
+              <h3 class="text-xl font-semibold text-white">James Mitchell</h3>
+              <p class="text-yellow-500 font-medium">Technical Coordinator</p>
+              <p class="text-gray-400 text-sm">MIT</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="contact-card text-center">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face"
+                alt="Lisa Park"
+                class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-lg"
+              />
+              <h3 class="text-xl font-semibold text-white">Lisa Park</h3>
+              <p class="text-yellow-500 font-medium">Marketing Lead</p>
+              <p class="text-gray-400 text-sm">Harvard Business School</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="contact-card text-center">
+              <img
+                src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=200&h=200&fit=crop&crop=face"
+                alt="David Kumar"
+                class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-lg"
+              />
+              <h3 class="text-xl font-semibold text-white">David Kumar</h3>
+              <p class="text-yellow-500 font-medium">Content Strategist</p>
+              <p class="text-gray-400 text-sm">Oxford University</p>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="contact-card text-center">
+              <img
+                src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face"
+                alt="Maria Gonzalez"
+                class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-lg"
+              />
+              <h3 class="text-xl font-semibold text-white">Maria Gonzalez</h3>
+              <p class="text-yellow-500 font-medium">Community Manager</p>
+              <p class="text-gray-400 text-sm">University of California</p>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="swiper-slide">
+            <div class="contact-card text-center">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
+                alt="Robert Johnson"
+                class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-lg"
+              />
+              <h3 class="text-xl font-semibold text-white">Robert Johnson</h3>
+              <p class="text-yellow-500 font-medium">Operations Lead</p>
+              <p class="text-gray-400 text-sm">Cambridge University</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper Navigation -->
+        <div class="flex justify-center mt-6 space-x-4">
+          <div class="swiper-button-prev text-yellow-500"></div>
+          <div class="swiper-button-next text-yellow-500"></div>
+        </div>
+
+        <!-- Swiper Pagination -->
+        <div class="flex justify-center mt-5">
+          <div class="swiper-pagination mt-20"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors -->
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="px-6 md:px-20 py-20 bg-[#111] text-center">
+      <img
+        src="pattern-removebg-preview.png"
+        alt="Scroll Down"
+        class="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
+        style="left: -30px"
+      />
+      <h2 class="text-4xl font-bold text-yellow-500 mb-12">Our Sponsors</h2>
+
+      <div class="contact-card max-w-3xl mx-auto">
+        <!-- Logo -->
+        <img src="image.png" alt="Lanka Tax" class="mx-auto mb-6 w-48" />
+
+        <!-- Website -->
+        <p class="mb-4">
+          🌐
+          <a
+            href="https://www.lanka.tax/"
+            target="_blank"
+            class="text-yellow-500 hover:underline"
+            >www.lanka.tax</a
+          >
+        </p>
+
+        <!-- Contact Info -->
+        <div class="space-y-2 mb-6">
+          <p>☏ +94 7 1314 0000</p>
+          <p>⚲ 247D, R. A. De Mel Mawatha, Colombo 03</p>
+          <p>@ tax@lanka.tax</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="https://www.twitter.com/lanka_tax" target="_blank">
+            <i class="fa-brands fa-twitter fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://www.facebook.com/smartertax" target="_blank">
+            <i class="fa-brands fa-facebook fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://www.instagram.com/lanka.tax/" target="_blank">
+            <i class="fa-brands fa-instagram fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@lankatax?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+          >
+            <i class="fa-brands fa-tiktok fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://lk.linkedin.com/company/lanka-tax" target="_blank">
+            <i class="fa-brands fa-linkedin fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@lankatax?sub_confirmation=1"
+            target="_blank"
+          >
+            <i class="fa-brands fa-youtube fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://www.threads.net/@lanka.tax" target="_blank">
+            <i class="fa-brands fa-threads fa-2xl" style="color: #d4af37"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="px-6 md:px-20 py-20">
+      <h2 class="text-4xl font-bold text-yellow-500 mb-12 text-center">
+        Contact Us
+      </h2>
+
+      <!-- Contact Info -->
+      <!-- Contact Info Section -->
+      <div class="contact-card text-center max-w-5xl mx-auto mb-12">
+        <!-- Email -->
+        <!-- Contact Info in One Line -->
+        <div class="flex flex-wrap justify-center gap-8 mb-8">
+          <!-- Email -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center text-white"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="text-left">
+              <p class="font-medium text-white">Email</p>
               <p class="text-gray-300">info@visiontalk2025.com</p>
             </div>
           </div>
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center">
-              📱
+
+          <!-- Phone -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center text-white"
+            >
+              <i class="fa-solid fa-phone"></i>
             </div>
-            <div>
-              <p class="font-medium">Phone</p>
+            <div class="text-left">
+              <p class="font-medium text-white">Phone</p>
               <p class="text-gray-300">+1 (555) 123-4567</p>
             </div>
           </div>
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center">
-              🌐
+
+          <!-- Website -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center text-white"
+            >
+              <i class="fa-solid fa-globe"></i>
             </div>
-            <div>
-              <p class="font-medium">Website</p>
+            <div class="text-left">
+              <p class="font-medium text-white">Website</p>
               <p class="text-gray-300">www.visiontalk2025.com</p>
             </div>
           </div>
         </div>
+
+        <!-- Social Media -->
+        <div class="flex justify-center space-x-6 mt-20">
+          <a href="https://twitter.com" target="_blank">
+            <i class="fa-brands fa-twitter fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <i class="fa-brands fa-facebook fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <i class="fa-brands fa-instagram fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank">
+            <i class="fa-brands fa-linkedin fa-2xl" style="color: #d4af37"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank">
+            <i class="fa-brands fa-youtube fa-2xl" style="color: #d4af37"></i>
+          </a>
+        </div>
       </div>
 
       <!-- Contact Form -->
-      <div class="wow fadeInRight">
-        <h3 class="text-2xl font-semibold mb-6">Send us a Message</h3>
+      <div
+        class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto bg-[#1a1a1a] p-10 rounded-lg"
+      >
         <form class="space-y-4">
-          <input type="text" placeholder="Your Name" 
-                 class="w-full px-4 py-3 bg-white/10 rounded-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <input type="email" placeholder="Your Email" 
-                 class="w-full px-4 py-3 bg-white/10 rounded-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <textarea placeholder="Your Message" rows="4" 
-                    class="w-full px-4 py-3 bg-white/10 rounded-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-          <button type="submit" 
-                  class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold hover:from-indigo-500 hover:to-purple-500 transition">
-            Send Message
-          </button>
+          <input
+            type="text"
+            placeholder="What's your Name?"
+            class="form-input"
+          />
+          <input type="email" placeholder="Your email" class="form-input" />
+          <textarea
+            placeholder="Message"
+            rows="4"
+            class="form-input"
+          ></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
         </form>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Have any query?</h3>
+          <!-- <h2 class="text-3xl font-bold text-yellow-500 mb-4">CONTACT US</h2> -->
+          <p class="text-gray-400">
+            We’re here to support you. Reach out for inquiries, collaborations,
+            or sponsorship opportunities.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+      <img
+        src="pattern-removebg-preview - Copy.png"
+        alt="Scroll Down"
+        class="absolute pointer-events-none"
+        style="right: 0; transform: translateY(-50%)"
+      />
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-6 bg-black text-center text-gray-400">
-    <p>© 2025 Vision Talk. All Rights Reserved.</p>
-    <p class="mt-2">Follow us on 
-      <a href="#" class="text-indigo-400 hover:text-indigo-300">Facebook</a>, 
-      <a href="#" class="text-pink-400 hover:text-pink-300">Instagram</a>, 
-      <a href="#" class="text-blue-400 hover:text-blue-300">Twitter</a>
-    </p>
-  </footer>
+    <!-- Footer -->
+    <footer class="px-6 md:px-20 py-12 bg-black text-center">
+      <a href="#" class="flex items-center justify-center space-x-2">
+        <img
+          src="logo.jpeg"
+          alt="VisionTalk Logo"
+          class="w-10 h-10 object-contain"
+        />
+        <h2 class="text-3xl font-bold text-yellow-500 mb-0 inline-block">
+          Let's Talk
+        </h2>
+      </a>
+
+      <div class="mt-4">
+        <a href="#" class="text-gray-400 hover:text-yellow-500"
+          >Privacy Policy</a
+        >
+        |
+        <a href="#" class="text-gray-400 hover:text-yellow-500"
+          >Terms & Conditions</a
+        >
+        <p class="text-gray-400 mt-2">
+          © 2025 VisionTalk. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  function toggleStory(storyId) {
-    const story = document.getElementById(storyId);
+  function toggleStory(id) {
+    const story = document.getElementById(id);
     const button = story.previousElementSibling;
-    
-    if (story.classList.contains('hidden')) {
-      story.classList.remove('hidden');
-      button.textContent = 'Read Less';
+    if (story.classList.contains("hidden")) {
+      story.classList.remove("hidden");
+      button.textContent = "Read Less";
     } else {
-      story.classList.add('hidden');
-      button.textContent = 'Read More';
+      story.classList.add("hidden");
+      button.textContent = "Read More";
     }
   }
 </script>
 
-</body>
-</html>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
